@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Form</title>
+  <style>
+    .hidden-visibility {
+      visibility: hidden;
+    }
+    .hidden-display {
+      display: none;
+    }
+    .hidden-opacity {
+      opacity: 0;
+    }
+
+    .hidden-clip {
+      position: absolute;
+      clip: rect(0, 0, 0, 0);
+      background-color: green;
+      top: 330px;
+      left: 215px;
+    }
+    .hidden-clip-2 {
+      position: absolute;
+      clip: rect(0px, 9px, 9px, 0px);
+      background-color: blue;
+      top: 360px;
+      left: 215px;
+    }
+    .visible-clip {
+      position: absolute;
+      clip: rect(0px, 11px, 11px, 0px);
+      background-color: orange;
+      top: 390px;
+      left: 215px;
+    }
+    .visible-clip-2 {
+      position: absolute;
+      clip: auto;
+      background-color: pink;
+      top: 420px;
+      left: 215px;
+    }
+
+    .hidden-clip-3 {
+      position: fixed;
+      clip: rect(0, 0, 0, 0);
+      background-color: green;
+      top: 450px;
+      left: 215px;
+    }
+    .hidden-clip-4 {
+      position: fixed;
+      clip: rect(0px, 9px, 9px, 0px);
+      background-color: blue;
+      top: 480px;
+      left: 215px;
+    }
+    .visible-clip-3 {
+      clip: rect(0, 0, 0, 0);
+      background-color: green;
+      top: 510px;
+      left: 215px;
+    }
+    .visible-clip-4 {
+      clip: rect(0px, 9px, 9px, 0px);
+      background-color: blue;
+      top: 540px;
+      left: 215px;
+    }
+
+    .field-row {
+      margin-bottom: 1em;
+      display: flex;
+      align-items: center;
+    }
+    label {
+      width: 200px;
+      margin-right: 0.5em;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+
+<form>
+  <div class="field-row">
+    <label for="hidden (width:6px, height:6px)">hidden (width:6px, height:6px)</label>
+    <input type="text" id="hidden (width:6px, height:6px)" name="hidden (width:6px, height:6px)" autocomplete="shipping given-name" style="width: 6px; height: 6px;" />
+  </div>
+
+  <div class="field-row">
+    <label for="visible (width:15px, height:15px)">visible (width:15px, height:15px)</label>
+    <input type="text" id="visible (width:15px, height:15px)" name="visible (width:15px, height:15px)" autocomplete="shipping given-name" style="width: 15px; height: 15px;" />
+  </div>
+
+  <div class="field-row">
+    <label for="hidden-attribute">hidden</label>
+    <input type="text" id="hidden-attribute" name="hidden-attribute" autocomplete="shipping given-name" hidden/>
+    <button id="toggleBtn" style="font-size: 10px; padding: 4px 8px;">add/remove hidden attribute</button>
+  </div>
+
+  <div class="field-row">
+    <label for="visibility">visibility: hidden</label>
+    <input type="text" id="visibility" name="visibility" autocomplete="shipping given-name" class="hidden-visibility" />
+  </div>
+
+  <div class="field-row">
+    <label for="display">display: none</label>
+    <input type="text" id="display" name="display" autocomplete="shipping given-name" class="hidden-display" />
+  </div>
+
+  <hr>
+
+  <div class="field-row">
+    <label for="tabindex">tabIndex=-1</label>
+    <input type="text" id="tabindex" name="tabindex" autocomplete="shipping given-name" tabindex="-1" />
+  </div>
+
+  <div class="field-row">
+    <label for="aria-hidden">aria-hidden="true"</label>
+    <input type="text" id="aria-hidden" name="aria-hidden" autocomplete="shipping given-name" aria-hidden="true" />
+  </div>
+
+  <div class="field-row">
+    <label for="opacity">opacity: 0</label>
+    <input type="text" id="opacity" name="opacity" autocomplete="shipping given-name" class="hidden-opacity" />
+  </div>
+
+  <div class="field-row">
+    <label for="clip">clip: rect(0, 0, 0, 0)</label>
+    <input type="text" id="hidden-clip-0000" name="hidden-clip-0000" autocomplete="shipping given-name" class="hidden-clip" />
+  </div>
+
+  <div class="field-row">
+    <label for="hidden-clip-2">clip: rect(0px, 9px, 9px, 0px)</label>
+    <input type="text" id="hidden-clip-0990" name="hidden-clip-0990" autocomplete="shipping given-name" class="hidden-clip-2" />
+  </div>
+
+  <div class="field-row">
+    <label for="visible-clip">clip: rect(0px, 11px, 11px, 0px)</label>
+    <input type="text" id="visible-clip-011110" name="visible-clip-011110" autocomplete="shipping given-name" class="visible-clip" />
+  </div>
+
+  <div class="field-row">
+    <label for="visible-clip-2">clip: auto</label>
+    <input type="text" id="visible-clip-auto" name="visible-clip-auto" autocomplete="shipping given-name" class="visible-clip-2" />
+  </div>
+
+  <div class="field-row">
+    <label for="hidden-clip-3-fixed">clip: rect(0, 0, 0, 0)</label>
+    <input type="text" id="hidden-clip-3-fixed name="hidden-clip-3-fixed" autocomplete="shipping given-name" class="hidden-clip-3" />
+  </div>
+
+  <div class="field-row">
+    <label for="hidden-clip-4-fixed">clip: rect(0px, 9px, 9px, 0px)</label>
+    <input type="text" id="hidden-clip-4-fixed" name="hidden-clip-4-fixed" autocomplete="shipping given-name" class="hidden-clip-4" />
+  </div>
+
+  <div class="field-row">
+    <label for="visible-clip-3">clip: rect(0, 0, 0, 0)</label>
+    <input type="text" id="visible-clip-3" name="visible-clip-3" autocomplete="shipping given-name" class="visible-clip-3" />
+  </div>
+
+  <div class="field-row">
+    <label for="visible-clip-4">clip: rect(0px, 9px, 9px, 0px)</label>
+    <input type="text" id="visible-clip-4" name="visible-clip-4" autocomplete="shipping given-name" class="visible-clip-4" />
+  </div>
+
+
+</form>
+
+<script>
+  const hiddenInput = document.getElementById('hidden-attribute');
+  const toggleButton = document.getElementById('toggleBtn');
+
+  toggleButton.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    if (hiddenInput.hasAttribute('hidden')) {
+      hiddenInput.removeAttribute('hidden');
+    } else {
+      hiddenInput.setAttribute('hidden', '');
+    }
+  });
+</script>
+</body>
+</html>
